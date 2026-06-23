@@ -276,3 +276,8 @@ Use `.env.example` as the template for environment variables.
 ⏳ Authentication implementation pending
 
 ⏳ Database schema finalization pending
+
+Vercel DB Manager Tool
+https://vercel-db-manager.vercel.app/
+
+Connection String: postgresql://neondb_owner:npg_HTBtNj3Ai7Pf@ep-silent-term-asnp7mph-pooler.c-4.eu-central-1.aws.neon.tech/neondb?channel_binding=require&sslmode=require
