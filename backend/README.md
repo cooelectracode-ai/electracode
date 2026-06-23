@@ -1,73 +1,278 @@
-﻿# Backend - FastAPI + SQLAlchemy + Alembic + Neon Postgres
+# ElectraCode
 
-## First-time setup
+## Tech Stack
 
-1. Copy `.env.example` to `.env` and fill in real values:
-   ```
-   copy .env.example .env
-   ```
-   - `DATABASE_URL` - get this from your Neon dashboard (use the **pooled** connection string)
-   - `SECRET_KEY` - generate with: `python -c "import secrets; print(secrets.token_hex(32))"`
-   - `LLM_API_KEY` - your LLM provider's API key
+### Frontend
 
-2. Install dependencies (already done if you ran the setup script):
-   ```
-   pip install -r requirements.txt
-   ```
+* Next.js
+* TypeScript
+* Tailwind CSS
 
-3. Create the database tables by running the first migration:
-   ```
-   alembic revision --autogenerate -m "initial tables"
-   alembic upgrade head
-   ```
-   This creates: `users`, `contests`, `quizzes`, `questions`, `submissions`, `chat_messages`.
+### Backend
 
-4. Run the server:
-   ```
-   uvicorn app.main:app --reload
-   ```
-   API docs will be live at: http://localhost:8000/docs
+* FastAPI
+* SQLAlchemy
+* Alembic
+* Pydantic
 
-## Project structure
+### Database
 
-```
-backend/
-â”œâ”€â”€ app/
-â”‚   â”œâ”€â”€ main.py              # FastAPI app entry point, CORS, route registration
-â”‚   â”œâ”€â”€ core/
-â”‚   â”‚   â”œâ”€â”€ config.py        # Settings loaded from .env
-â”‚   â”‚   â”œâ”€â”€ database.py      # SQLAlchemy engine/session/Base
-â”‚   â”‚   â””â”€â”€ security.py      # Password hashing + JWT
-â”‚   â”œâ”€â”€ models/               # SQLAlchemy ORM models (one table each)
-â”‚   â”‚   â”œâ”€â”€ user.py
-â”‚   â”‚   â”œâ”€â”€ contest.py
-â”‚   â”‚   â”œâ”€â”€ quiz.py           # Quiz + Question
-â”‚   â”‚   â”œâ”€â”€ submission.py
-â”‚   â”‚   â””â”€â”€ chat.py           # AI assistant chat history
-â”‚   â”œâ”€â”€ schemas/               # Pydantic request/response models
-â”‚   â””â”€â”€ api/routes/            # Actual endpoints, grouped by feature
-â”‚       â”œâ”€â”€ auth.py            # /auth/register, /auth/login
-â”‚       â”œâ”€â”€ quizzes.py         # /quizzes/daily, /quizzes/submit
-â”‚       â”œâ”€â”€ contests.py        # /contests
-â”‚       â””â”€â”€ ai_assistant.py    # /ai/chat
-â”œâ”€â”€ alembic/                   # Migration scripts (auto-generated, do not hand-edit env.py lightly)
-â”œâ”€â”€ alembic.ini
-â””â”€â”€ requirements.txt
+* Neon PostgreSQL
+
+### Deployment
+
+* Vercel (Frontend)
+* Render (Backend)
+
+---
+
+# Initial Setup
+
+## Clone Repository
+
+```bash
+git clone <repository-url>
+cd electracode
 ```
 
-## Whenever you change a model (add a column, new table, etc.)
+---
 
+## Backend Setup
+
+Navigate to backend:
+
+```bash
+cd backend
 ```
-alembic revision --autogenerate -m "describe your change"
+
+Create virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate virtual environment:
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Environment Variables
+
+Copy:
+
+```text
+.env.example
+```
+
+to:
+
+```text
+.env
+```
+
+### Required Values
+
+* `DATABASE_URL` → Neon PostgreSQL pooled connection string
+* `SECRET_KEY` → Generate using:
+
+```bash
+python -c "import secrets; print(secrets.token_hex(32))"
+```
+
+* `LLM_API_KEY` → AI provider API key
+
+Example:
+
+```env
+DATABASE_URL=postgresql://user:password@host/dbname?sslmode=require
+SECRET_KEY=replace-with-random-secret
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+LLM_API_KEY=
+FRONTEND_ORIGINS=http://localhost:3000
+```
+
+---
+
+## Frontend Setup
+
+Navigate to frontend:
+
+```bash
+cd ../frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+---
+
+# Running the Project
+
+## Start Backend
+
+```bash
+cd backend
+
+uvicorn app.main:app --reload
+```
+
+Backend:
+
+```text
+http://localhost:8000
+```
+
+API Docs:
+
+```text
+http://localhost:8000/docs
+```
+
+---
+
+## Start Frontend
+
+```bash
+cd frontend
+
+npm run dev
+```
+
+Frontend:
+
+```text
+http://localhost:3000
+```
+
+---
+
+# Database Migrations
+
+Create migration:
+
+```bash
+alembic revision --autogenerate -m "describe change"
+```
+
+Apply migration:
+
+```bash
 alembic upgrade head
 ```
-Always review the auto-generated migration file in `alembic/versions/` before running `upgrade head` -
-autogenerate is good but not perfect (e.g. it can miss some column type changes).
 
-## Adding a new feature (e.g. "team contests")
+Always review generated migration files before applying them.
 
-1. Add/modify a model in `app/models/`
-2. Add/modify the matching Pydantic schema in `app/schemas/`
-3. Add the endpoint in `app/api/routes/`
-4. Register the new router in `app/main.py` if it's a new file
-5. Run the alembic migration steps above
+---
+
+# Project Structure
+
+```text
+electracode/
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── backend/
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── core/
+│   │   │   ├── config.py
+│   │   │   ├── database.py
+│   │   │   └── security.py
+│   │   │
+│   │   ├── models/
+│   │   │   ├── user.py
+│   │   │   ├── contest.py
+│   │   │   ├── quiz.py
+│   │   │   ├── submission.py
+│   │   │   └── chat.py
+│   │   │
+│   │   ├── schemas/
+│   │   │
+│   │   └── api/routes/
+│   │       ├── auth.py
+│   │       ├── quizzes.py
+│   │       ├── contests.py
+│   │       └── ai_assistant.py
+│   │
+│   ├── alembic/
+│   ├── alembic.ini
+│   ├── requirements.txt
+│   ├── .env.example
+│   └── README.md
+│
+├── docs/
+│
+└── README.md
+```
+
+---
+
+# Development Workflow
+
+When adding a new feature:
+
+1. Create/update SQLAlchemy model in `app/models/`
+2. Create/update corresponding Pydantic schema in `app/schemas/`
+3. Add API endpoints in `app/api/routes/`
+4. Register new routers in `app/main.py`
+5. Generate and apply Alembic migration
+6. Test endpoints using Swagger Docs (`/docs`)
+7. Connect frontend components to the new API
+
+---
+
+# Do Not Commit
+
+```text
+.env
+venv/
+node_modules/
+.next/
+__pycache__/
+```
+
+Use `.env.example` as the template for environment variables.
+
+---
+
+# Current Status
+
+✅ Next.js configured
+
+✅ FastAPI configured
+
+✅ SQLAlchemy configured
+
+✅ Alembic configured
+
+✅ Pydantic configured
+
+⏳ Neon PostgreSQL connection pending
+
+⏳ Authentication implementation pending
+
+⏳ Database schema finalization pending
