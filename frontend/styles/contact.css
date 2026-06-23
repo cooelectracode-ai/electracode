@@ -1,0 +1,418 @@
+/* ============================================
+   Contact Page Styles
+   ============================================ */
+
+.contact-hero {
+    text-align: center;
+    padding: 60px 24px 40px;
+}
+
+.contact-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.contact-hero h1 span {
+    color: var(--electric-blue);
+}
+
+.contact-hero h2 {
+    font-size: 1.25rem;
+    color: var(--electric-blue);
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.contact-hero p {
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Form Container */
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.form-card {
+    background: linear-gradient(145deg, rgba(23, 37, 55, 0.6) 0%, rgba(10, 30, 51, 0.8) 100%);
+    border: 1px solid var(--border-dark);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.card-header i {
+    font-size: 1.25rem;
+    color: var(--electric-blue);
+    background: rgba(63, 169, 245, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.card-header h3 {
+    font-size: 1.25rem;
+    color: var(--white);
+    font-weight: 600;
+}
+
+/* Input Styles */
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.input-label-icon {
+    width: 140px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.input-label-icon i {
+    color: var(--electric-blue);
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.input-wrapper {
+    flex-grow: 1;
+}
+
+.input-field {
+    width: 100%;
+    background: rgba(10, 30, 51, 0.5);
+    border: 1px solid var(--border-dark);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--white);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--electric-blue);
+    box-shadow: 0 0 0 2px rgba(63, 169, 245, 0.2);
+    background: rgba(10, 30, 51, 0.8);
+}
+
+.input-field::placeholder {
+    color: var(--text-muted);
+}
+
+select.input-field {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%237A869A'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+/* Checkboxes Grid */
+.checkbox-subtitle {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(10, 30, 51, 0.5);
+    border: 1px solid var(--border-dark);
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.checkbox-label:hover {
+    border-color: rgba(63, 169, 245, 0.5);
+    background: rgba(63, 169, 245, 0.05);
+}
+
+.checkbox-label input {
+    display: none;
+}
+
+.checkbox-custom {
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--text-muted);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.checkbox-label input:checked + .checkbox-custom {
+    background: var(--electric-blue);
+    border-color: var(--electric-blue);
+}
+
+.checkbox-label input:checked + .checkbox-custom::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--dark-navy);
+    font-size: 10px;
+}
+
+.checkbox-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+.checkbox-text i {
+    color: var(--electric-blue);
+}
+
+/* Textarea */
+.textarea-wrapper {
+    margin-top: 10px;
+}
+
+.textarea-label {
+    display: block;
+    color: var(--white);
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+textarea.input-field {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Submit Section */
+.submit-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.submit-btn {
+    background: var(--electric-blue);
+    color: var(--white);
+    border: none;
+    padding: 16px 40px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(63, 169, 245, 0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(63, 169, 245, 0.4);
+    background: var(--cyan);
+    color: var(--dark-navy);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Contact Info Strip */
+.contact-info-card {
+    background: linear-gradient(145deg, rgba(23, 37, 55, 0.4) 0%, rgba(10, 30, 51, 0.6) 100%);
+    border: 1px solid var(--border-dark);
+    border-radius: 16px;
+    padding: 30px;
+}
+
+.contact-info-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.info-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(63, 169, 245, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--electric-blue);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover .info-icon {
+    background: var(--electric-blue);
+    color: var(--white);
+}
+
+.info-text h4 {
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.info-text p {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    line-height: 1.3;
+}
+
+.info-text a {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.info-text a:hover {
+    color: var(--electric-blue);
+}
+
+/* Status Messages */
+.form-status {
+    margin-bottom: 20px;
+    padding: 16px;
+    border-radius: 8px;
+    display: none;
+    text-align: center;
+    font-weight: 500;
+}
+
+.form-status.success {
+    display: block;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #4ade80;
+}
+
+.form-status.error {
+    display: block;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #f87171;
+}
+
+.error-msg {
+    color: #f87171;
+    font-size: 0.8rem;
+    margin-top: 4px;
+    display: none;
+}
+
+.input-field.invalid {
+    border-color: #ef4444;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .contact-info-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 860px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .checkbox-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .input-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .input-label-icon {
+        width: 100%;
+    }
+    
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-card {
+        padding: 20px;
+    }
+}

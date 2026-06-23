@@ -1,0 +1,11 @@
+/* ============================================================
+   ElectraCode — theme.css (DEPRECATED)
+
+   This file previously held a duplicate copy of the global
+   body background and body::before grid overlay.
+
+   Those styles now live exclusively in styles/global.css,
+   which is the single source of truth for the background system.
+
+   This file is intentionally left empty to avoid duplicates.
+   ============================================================ */

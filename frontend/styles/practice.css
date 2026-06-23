@@ -1,0 +1,207 @@
+/* ================================================================
+   ELECTROCODE  ·  PRACTICE.CSS
+   Covers: practice page
+
+   NOTE: Global reset, body background, and shared tokens are
+   defined in styles/global.css — do NOT redefine them here.
+================================================================ */
+
+/* HERO */
+
+.hero {
+    /* background intentionally transparent — inherits from body */
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #D8E1E8;
+    font-size: 20px;
+    margin-bottom: 45px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+
+    width: 200px;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, .12);
+
+    box-shadow:
+    0 10px 40px rgba(0, 0, 0, .25);
+}
+
+.stat-card h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+
+    color: #00E5FF;
+}
+
+.stat-card span {
+    color: #D8E1E8;
+}
+
+/* TOPIC SECTION */
+
+.topics-section {
+
+    padding: 70px 0;
+    /* background intentionally transparent — inherits from body */
+}
+
+.topics {
+
+    width: 85%;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+/* CARD */
+
+.topic-card {
+
+    background: linear-gradient(
+        145deg,
+        #172537 0%,
+        #11171F 100%
+    );
+
+    border: 1px solid #243447;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    min-height: 230px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-shadow:
+    0 20px 50px rgba(10, 30, 51, .35);
+}
+
+.topic-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #3FA9F5;
+
+    box-shadow:
+    0 20px 60px rgba(63, 169, 245, .25);
+}
+
+.card-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.badge {
+
+    padding: 8px 16px;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.easy-badge {
+    background: #A6E22E;
+    color: #0A1E33;
+}
+
+.medium-badge {
+    background: #00E5FF;
+    color: #0A1E33;
+}
+
+.hard-badge {
+    background: #EF4444;
+    color: white;
+}
+
+.duration {
+    color: #B8C4D4;
+}
+
+.topic-card h3 {
+
+    font-size: 32px;
+
+    margin-bottom: 18px;
+
+    color: #FFFFFF;
+}
+
+.topic-card p {
+
+    color: #94A3B8;
+
+    line-height: 1.7;
+
+    flex: 1;
+}
+
+.card-footer {
+
+    color: #B8C4D4;
+
+    margin-top: 25px;
+}
+
+@media(max-width: 1200px) {
+
+    .topics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 768px) {
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .topics {
+        grid-template-columns: 1fr;
+    }
+}

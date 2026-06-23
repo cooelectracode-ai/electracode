@@ -1,0 +1,643 @@
+/* ============================================
+   ElectraCode — Home Page (Dark Techy Theme)
+   Covers: landing / home page
+
+   NOTE: Global reset, body background, and shared tokens are
+   defined in styles/global.css — do NOT redefine them here.
+   ============================================ */
+
+h2, h3, h4, .logo, .nav-btn, .btn {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+
+.hero {
+  /* background intentionally transparent — inherits from body */
+  padding: 100px 20px;
+  text-align: left;
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(10, 30, 51, 0.35);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #00E5FF;
+  margin-bottom: 28px;
+}
+
+.eyebrow .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #A6E22E;
+  box-shadow: 0 0 8px #A6E22E;
+}
+
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.6rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  max-width: 600px;
+  margin: 0 0 24px;
+  color: #FFFFFF;
+}
+
+.hero h1 .gradient-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00E5FF, #2ED9C3, #A6E22E);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin: 0 0 32px;
+  color: rgba(245, 249, 255, 0.7);
+  max-width: 520px;
+  letter-spacing: 0.01em;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 18px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   PIPELINE STEPS
+   ============================================ */
+
+.pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 36px;
+  row-gap: 12px;
+}
+
+.pipeline-step {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  padding: 8px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.pipeline-arrow {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+}
+
+.pipeline-final {
+  background: #A6E22E;
+  border-color: #A6E22E;
+  color: #0A1E33;
+}
+
+/* ============================================
+   HERO FLOATING CARDS
+   ============================================ */
+
+.hero-visual {
+  position: relative;
+  min-height: 420px;
+}
+
+.float-card {
+  position: absolute;
+  background: linear-gradient(145deg, #172537 0%, #0A1E33 100%);
+  border: 1px solid #243447;
+  border-radius: 16px;
+  padding: 22px 24px;
+  box-shadow: 0 20px 50px rgba(10, 30, 51, 0.5);
+  animation: float-up-down 6s ease-in-out infinite;
+}
+
+.talent-passport {
+  animation-delay: 0s;
+}
+
+.employability-score {
+  animation-delay: 1.5s;
+}
+
+.recruiter-matches {
+  animation-delay: 3s;
+}
+
+.float-card h4 {
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFFF;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.float-card p {
+  color: #7A869A;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.talent-passport {
+  top: 0;
+  right: 30px;
+  width: 320px;
+  z-index: 1;
+}
+
+.float-badge {
+  display: inline-block;
+  background: #A6E22E;
+  color: #0A1E33;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 6px;
+  margin-bottom: 14px;
+}
+
+.skill-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: #7A869A;
+  font-size: 0.85rem;
+}
+
+.skill-row span {
+  flex-shrink: 0;
+}
+
+.skill-bar {
+  flex: 1;
+  height: 6px;
+  background: #243447;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00E5FF, #A6E22E);
+  border-radius: 4px;
+}
+
+.employability-score {
+  top: 190px;
+  right: 0;
+  width: 340px;
+  z-index: 0;
+}
+
+.float-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(245, 158, 11, 0.15);
+  font-size: 1.2rem;
+  margin-bottom: 14px;
+}
+
+.recruiter-matches {
+  top: 290px;
+  right: 70px;
+  width: 320px;
+  z-index: 2;
+}
+
+.recruiter-matches .float-icon {
+  background: rgba(45, 217, 195, 0.15);
+}
+
+.recruiter-matches p {
+  margin-bottom: 14px;
+}
+
+.recruit-link {
+  color: #A6E22E;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.recruit-link:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  padding: 16px 36px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  transition: 0.25s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: #00E5FF;
+  color: #0A1E33;
+}
+
+.btn-primary:hover {
+  background: #2ED9C3;
+  box-shadow: 0 0 32px rgba(0, 229, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* ============================================
+   FEATURES — "Why ElectraCode?"
+   ============================================ */
+
+.features {
+  padding: 100px 20px;
+  /* Subtle radial accents on top of the global background */
+  background:
+    radial-gradient(circle at 15% 20%, rgba(63, 169, 245, 0.06), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(166, 226, 46, 0.05), transparent 40%),
+    transparent;
+}
+
+.section-title {
+  color: #FFFFFF;
+  font-size: 2.6rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 60px;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin: 18px auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #00E5FF, #A6E22E);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.card {
+  background: linear-gradient(145deg, #172537 0%, #11171F 100%);
+  border: 1px solid #243447;
+  border-radius: 18px;
+  padding: 40px 32px;
+  box-shadow: 0 20px 50px rgba(10, 30, 51, 0.5);
+  transition: 0.3s;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00E5FF, #A6E22E, transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  border-color: #3FA9F5;
+  box-shadow: 0 20px 60px rgba(63, 169, 245, 0.25);
+  transform: translateY(-6px);
+}
+
+.card-icon {
+  font-size: 2.8rem;
+  margin-bottom: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: rgba(63, 169, 245, 0.12);
+}
+
+.card h3 {
+  color: #FFFFFF;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+
+.card p {
+  color: #7A869A;
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+/* ============================================
+   LEADERBOARD — "Top Performers"
+   ============================================ */
+
+.leaderboard-preview {
+  /* Semi-transparent dark surface differentiates this section
+     while still revealing the global background gradient */
+  background: rgba(17, 23, 31, 0.85);
+  padding: 100px 20px;
+  border-top: 1px solid #243447;
+  border-bottom: 1px solid #243447;
+}
+
+.leaderboard-table {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #172537;
+  border: 1px solid #243447;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(10, 30, 51, 0.5);
+}
+
+.table-header {
+  background: linear-gradient(90deg, #1A4C8B, #3FA9F5);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px 120px;
+  align-items: center;
+  padding: 22px 24px;
+  border-bottom: 1px solid #243447;
+  color: #FFFFFF;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row:not(.table-header):hover {
+  background: rgba(63, 169, 245, 0.06);
+}
+
+.rank {
+  color: #3FA9F5;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.table-row strong {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.badge {
+  margin-left: 12px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.badge-gold {
+  background: #A6E22E;
+  color: #0A1E33;
+}
+
+.badge-silver {
+  background: #2ED9C3;
+  color: #0A1E33;
+}
+
+.badge-bronze {
+  background: #3FA9F5;
+  color: #FFFFFF;
+}
+
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: #11171F;
+    border-bottom: 1px solid #243447;
+    padding: 12px 24px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 12px 0;
+    border-bottom: 1px solid #243447;
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-cta .nav-cta-text {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    min-height: 480px;
+    margin-top: 20px;
+  }
+
+  .talent-passport {
+    right: 10px;
+    width: 80%;
+    max-width: 320px;
+  }
+
+  .employability-score {
+    right: 0;
+    width: 85%;
+    max-width: 340px;
+  }
+
+  .recruiter-matches {
+    right: 5%;
+    width: 80%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 20px 80px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 50px 1fr 70px 70px;
+    font-size: 0.8rem;
+    padding: 16px 14px;
+  }
+
+  .badge {
+    display: block;
+    margin: 6px 0 0;
+    width: fit-content;
+  }
+
+
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .pipeline {
+    gap: 8px;
+  }
+
+  .pipeline-step {
+    font-size: 0.8rem;
+    padding: 7px 14px;
+  }
+
+  .hero-visual {
+    min-height: 560px;
+  }
+
+  .talent-passport,
+  .employability-score,
+  .recruiter-matches {
+    width: 90%;
+    right: 5%;
+    left: 5%;
+  }
+
+  .talent-passport {
+    top: 0;
+  }
+
+  .employability-score {
+    top: 220px;
+  }
+
+  .recruiter-matches {
+    top: 360px;
+  }
+}

@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Rankings Page Styles
+   ========================================================================== */
+
+/* HERO */
+.hero {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 2rem 2.5rem;
+  text-align: center;
+}
+.hero h1 { color: #fff; font-size: 32px; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+.hero p { color: rgba(255,255,255,0.65); font-size: 15px; margin-bottom: 2rem; }
+
+/* FILTER BUTTONS */
+.filters { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.filter-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid #243447;
+  color: #7A869A;
+  padding: 8px 22px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.filter-btn:hover { border-color: #3FA9F5; color: #00E5FF; background: rgba(0,229,255,0.08); }
+.filter-btn.active { background: #00E5FF; color: #0A1E33; border-color: transparent; font-weight: 700; box-shadow: 0 4px 16px rgba(0,229,255,0.35); }
+
+/* TABLE */
+.table-section {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  min-height: 60vh;
+}
+.table-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(145deg, #172537 0%, #0A1E33 100%);
+  border: 1px solid #243447;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(10, 30, 51, 0.5);
+}
+.table-header {
+  display: grid;
+  grid-template-columns: 90px 1fr 160px 110px;
+  background: rgba(0, 229, 255, 0.1);
+  border-bottom: 1px solid #243447;
+  padding: 14px 20px;
+}
+.table-header span { color: #00E5FF; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; }
+.table-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 160px 110px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #243447;
+  align-items: center;
+  transition: background 0.2s;
+}
+.table-row:last-child { border-bottom: none; }
+.table-row:hover { background: rgba(63, 169, 245, 0.06); }
+
+/* RANK CELL */
+.rank-cell { display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 600; color: #fff; }
+.rank-num { color: #00E5FF; }
+
+/* NAME CELL */
+.name { font-size: 14px; font-weight: 600; color: #fff; }
+
+/* ROLE / BADGE CELL */
+.role-cell { display: flex; align-items: center; gap: 8px; }
+.badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.badge-gold   { background: rgba(166, 226, 46, 0.15); color: #A6E22E; border: 1px solid rgba(166,226,46,0.3); }
+.badge-silver { background: rgba(63, 169, 245, 0.15); color: #3FA9F5; border: 1px solid rgba(63,169,245,0.3); }
+.badge-bronze { background: rgba(46, 217, 195, 0.15); color: #2ED9C3; border: 1px solid rgba(46,217,195,0.3); }
+.role-text { font-size: 13px; color: #7A869A; }
+
+/* SCORE CELL */
+.score { font-size: 14px; font-weight: 700; color: #00E5FF; }
+
+/* EMPTY STATE */
+.empty { text-align: center; padding: 3rem; color: #7A869A; font-size: 14px; }

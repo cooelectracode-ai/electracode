@@ -1,0 +1,228 @@
+/* ================================================================
+   ELECTROCODE  ·  COLLEGES.CSS  ·  DARK PREMIUM DESIGN SYSTEM v3.0
+   Design Reference: Dashboard Dark Professional UI
+   Covers: colleges page
+
+   NOTE: Global reset, :root tokens, body background, body::before
+   grid overlay, scrollbar, and shared @keyframes are defined in
+   styles/global.css — do NOT redefine them here.
+================================================================ */
+
+/* ================================================================
+   COLLEGES PAGE
+================================================================ */
+
+/* HERO */
+.college-hero {
+  position: relative;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px 40px;
+  overflow: hidden;
+  /* background intentionally transparent — inherits from body */
+}
+
+.college-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  animation: fadeInUp 0.75s ease;
+}
+
+.college-hero-content h1 {
+  color: white;
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+}
+
+.college-hero-content h1 span {
+  background: linear-gradient(90deg, #00E5FF, #2ED9C3, #A6E22E);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.college-hero-content p {
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* BENEFITS SECTION */
+.benefits-section {
+  padding: 40px 48px 80px;
+}
+
+.benefits-section h2 {
+  text-align: center;
+  color: var(--text-white);
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 56px;
+  letter-spacing: -0.5px;
+}
+
+/* BENEFITS GRID */
+.benefits-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* BENEFIT CARD */
+.benefit-card {
+  background: linear-gradient(145deg, #172537 0%, #0A1E33 100%);
+  border: 1px solid #243447;
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  min-height: 220px;
+  transition: var(--transition);
+  box-shadow: 0 20px 50px rgba(10, 30, 51, 0.5);
+  position: relative;
+  overflow: hidden;
+  width: calc((100% - 60px) / 4);
+}
+
+/* Top accent strip */
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 24px; right: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00E5FF, #A6E22E, transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.benefit-card:hover {
+  transform:
+    translateY(-8px)
+    scale(1.02);
+
+  border-color: #3FA9F5;
+
+  box-shadow:
+    0 20px 60px rgba(63, 169, 245, 0.25);
+}
+
+.benefit-card:hover::before {
+  opacity: 1;
+}
+
+.benefit-card h3 {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  color: var(--text-white);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  line-height: 1.4;
+}
+
+.benefit-card ul { list-style: none; }
+
+.benefit-card li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 2.1;
+}
+
+.benefit-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #A6E22E;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* CTA — PARTNER SECTION */
+.partner-section {
+  border-top: 1px solid #243447;
+  text-align: center;
+  padding: 110px 20px;
+  position: relative;
+  overflow: hidden;
+  /* background intentionally transparent — inherits from body */
+}
+
+.partner-section::before {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(63, 169, 245, 0.18) 0%, transparent 70%);
+}
+
+.partner-section h2 {
+  position: relative;
+  color: var(--text-white);
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.partner-section p {
+  position: relative;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.partner-btn {
+  position: relative;
+  display: inline-block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #00E5FF;
+  color: #0A1E33;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  padding: 18px 52px;
+  border-radius: 10px;
+  box-shadow: none;
+  transition: 0.25s;
+  letter-spacing: 0.2px;
+}
+
+.partner-btn:hover {
+  background: #2ED9C3;
+  box-shadow: 0 0 32px rgba(0, 229, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE — COLLEGES */
+@media (max-width: 1200px) {
+  .benefit-card { width: calc((100% - 20px) / 2); }
+}
+
+@media (max-width: 768px) {
+  .college-hero-content h1 { font-size: 2.2rem; }
+  .benefits-section h2,
+  .partner-section h2 { font-size: 1.9rem; }
+  .benefit-card { width: 100%; }
+  .benefits-section { padding: 64px 20px; }
+  .partner-section { padding: 72px 20px; }
+}

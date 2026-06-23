@@ -1,0 +1,262 @@
+/* ================================================================
+   ELECTROCODE  ·  AUTH.CSS
+   Covers: login / signup pages
+
+   NOTE: Global reset, body background, and shared tokens are
+   defined in styles/global.css — do NOT redefine them here.
+================================================================ */
+
+.auth-section {
+
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.auth-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: #3FA9F5;
+
+    filter: blur(180px);
+
+    opacity: .2;
+
+    top: -150px;
+
+    right: -100px;
+}
+
+.google-btn {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    transition: .25s;
+}
+
+.google-btn:hover {
+
+    border-color: #3FA9F5;
+
+    background: rgba(63, 169, 245, 0.12);
+}
+
+.auth-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background: #A6E22E;
+
+    filter: blur(180px);
+
+    opacity: .12;
+
+    bottom: -150px;
+
+    left: -100px;
+}
+
+.auth-card {
+    
+    margin-top: 40px;
+    width: 500px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    padding: 45px;
+
+    border-radius: 24px;
+
+    box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.25);
+
+    position: relative;
+
+    z-index: 10;
+}
+
+.auth-card h1 {
+
+    text-align: center;
+
+    color: white;
+
+    margin-bottom: 15px;
+
+    font-size: 2.2rem;
+}
+
+.subtitle {
+
+    text-align: center;
+
+    color: #D8E1E8;
+
+    margin-bottom: 35px;
+}
+
+form {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+label {
+
+    color: white;
+
+    margin-bottom: 8px;
+
+    font-weight: 600;
+}
+
+input {
+
+    padding: 15px;
+
+    margin-bottom: 25px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 16px;
+}
+
+.divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 25px 0;
+
+    color: #9CA3AF;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+.divider::before,
+.divider::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.12);
+}
+
+input::placeholder {
+
+    color: #D8E1E8;
+}
+
+input:focus {
+
+    outline: none;
+
+    border-color: #3FA9F5;
+}
+
+.login-btn {
+
+    background: linear-gradient(
+        135deg,
+        #3FA9F5,
+        #1A4C8B
+    );
+
+    color: white;
+
+    border: none;
+
+    padding: 16px;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.login-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+    0 10px 25px rgba(63, 169, 245, .4);
+}
+
+.signup-text {
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #D8E1E8;
+}
+
+.signup-text a {
+
+    color: #A6E22E;
+
+    text-decoration: none;
+}

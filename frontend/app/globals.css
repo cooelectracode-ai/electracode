@@ -1,0 +1,6 @@
+/* ElectraCode — App-level globals
+   Imports the single-source-of-truth CSS that contains
+   the background system, design tokens, reset, and shared styles.
+   All pages inherit the background from styles/global.css. */
+
+@import '../styles/global.css';

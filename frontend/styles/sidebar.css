@@ -1,0 +1,203 @@
+/* ==========================================================================
+   ElectraCode — Shared Sidebar & Grid Layout
+   ========================================================================== */
+
+/* Main Layout Wrapper */
+.dashboard-container {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px;
+  min-width: 0;
+  transition: padding-left 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+}
+
+/* Sidebar Standard Style */
+.sidebar {
+  width: 260px;
+  background: rgba(10, 30, 51, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              width 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              padding 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.3s ease;
+  z-index: 100;
+  flex-shrink: 0;
+  height: auto;
+  min-height: 100%;
+}
+
+/* Sidebar Header & Toggle */
+.sidebar-header {
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-logo-img {
+  height: 52px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.sidebar-toggle-btn {
+  background: transparent;
+  border: none;
+  color: #B8C4D4;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-toggle-btn:hover {
+  color: #00E5FF;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Sidebar Navigation */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #cbd5e1;
+  padding: 14px 18px;
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  transition: all 0.25s ease;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.sidebar a i {
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: linear-gradient(135deg, #3FA9F5, #2563EB);
+  color: white;
+  box-shadow: 0 6px 20px rgba(63, 169, 245, 0.25);
+}
+
+/* Collapsed Sidebar State (Desktop) */
+.dashboard-container.sidebar-collapsed .sidebar {
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-100%);
+  border-right: none;
+}
+
+
+/* Floating Restore Button */
+.sidebar-restore-btn {
+  position: fixed;
+  left: 20px;
+  top: 100px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 10px;
+  background: #0A1E33;
+  color: #00E5FF;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.sidebar-restore-btn:hover {
+  transform: scale(1.05);
+  background: rgba(10, 30, 51, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3);
+  border-color: #00E5FF;
+}
+
+.dashboard-container.sidebar-collapsed .sidebar-restore-btn {
+  display: flex;
+}
+
+/* Mobile Sidebar Drawer (< 768px) */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    box-shadow: none;
+    height: calc(100vh - 80px);
+    width: 260px;
+  }
+  
+  .dashboard-container.sidebar-open-mobile .sidebar {
+    transform: translateX(0);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .main-content {
+    padding: 20px 15px;
+  }
+  
+  /* Mobile backdrop overlay */
+  .sidebar-backdrop {
+    position: fixed;
+    top: 80px;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 90;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .dashboard-container.sidebar-open-mobile .sidebar-backdrop {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Show floating trigger button on mobile by default */
+  .sidebar-restore-btn {
+    display: flex !important;
+  }
+  
+  .dashboard-container.sidebar-open-mobile .sidebar-restore-btn {
+    display: none !important;
+  }
+}

@@ -1,0 +1,282 @@
+/* ================================================================
+   ELECTROCODE  ·  DASHBOARD.CSS
+   Covers: dashboard page
+
+   NOTE: Global reset, body background, and shared tokens are
+   defined in styles/global.css — do NOT redefine them here.
+================================================================ */
+
+.dashboard-container {
+    display: flex;
+    min-height: calc(100vh - 80px);
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 260px;
+
+    background: rgba(10, 30, 51, .92);
+
+    backdrop-filter: blur(20px);
+
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+    padding: 25px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #cbd5e1;
+    padding: 14px 18px;
+    border-radius: 12px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    transition: .3s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: linear-gradient(
+        135deg,
+        #3FA9F5,
+        #2563EB
+    );
+
+    color: white;
+
+    box-shadow:
+    0 6px 20px rgba(63, 169, 245, .25);
+}
+
+/* Main */
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.welcome h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: #B8C4D4;
+    margin-bottom: 35px;
+}
+
+/* Cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: linear-gradient(
+        145deg,
+        #172537 0%,
+        #11171F 100%
+    );
+
+    border: 1px solid #243447;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    box-shadow:
+    0 20px 50px rgba(10, 30, 51, .35);
+
+    transition: .3s;
+}
+
+.card:hover {
+
+    border-color: #3FA9F5;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+    0 20px 60px rgba(63, 169, 245, .25);
+}
+
+.card h3 {
+    margin-bottom: 20px;
+}
+
+.card h4 {
+    color: #00E5FF;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #334155;
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #00E5FF,
+        #A6E22E
+    );
+}
+
+button {
+    width: 100%;
+    border: none;
+    margin-top: 20px;
+    padding: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.stats span {
+    color: #94a3b8;
+}
+
+.stats h2 {
+    margin-top: 8px;
+}
+
+.ranking-card {
+    text-align: center;
+}
+
+.medal {
+    font-size: 60px;
+    margin: 20px 0;
+}
+
+.ranking-card h1 {
+    font-size: 52px;
+}
+
+.ranking-card small {
+    color: #22c55e;
+}
+
+/* Bottom */
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.skill {
+    margin-top: 20px;
+}
+
+.skill-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.suggestion {
+    padding: 18px;
+    background: #172537;
+    border-left: 4px solid #60a5fa;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.suggestions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.suggestion {
+    padding: 20px;
+    border-radius: 14px;
+    background: #172537;
+}
+
+.suggestion h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.suggestion p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.blue {
+    border-left: 4px solid #3b82f6;
+}
+
+.green {
+    border-left: 4px solid #84cc16;
+}
+
+.dark {
+    border-left: 4px solid #2563eb;
+}
+
+.dark {
+    grid-column: 1;
+}
+
+.card .continue-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    border-radius: 12px;
+    text-decoration: none;
+
+    color: #0A1E33;
+
+    font-weight: 700;
+
+    background: linear-gradient(
+        135deg,
+        #00E5FF,
+        #A6E22E
+    );
+}
+
+@media(max-width: 1100px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
